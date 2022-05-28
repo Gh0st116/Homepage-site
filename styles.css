@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+/* CSS variables*/
+:root {
+    --main-green: #009434;
+    --primary-color: #f2f2f2;
+    --secondary-color: #cccccc;
+    --tertiary-color: #fff;
+    --fa-color: #4d4d4d;
+    --text-color: #1a1a1a;
+}
+
+.dark-theme {
+    --main-green: #33ff7a;
+    --primary-color: #1a1a1a;
+    --secondary-color: #333333;
+    --tertiary-color:#000;
+    --fa-color: #b3b3b3;
+    --text-color: #f2f2f2;
+}
+
+/* Transition between dark and light theme for every background*/
+* {
+    transition: background 0.25s linear;
+}
+
+body {
+    position: relative;
+    font-size: 1.5rem;
+    font-family: 'Work sans', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    min-height: 950px;
+}
+
+header {
+    border-bottom: 7px solid darkgreen;
+    margin: 0 4%;
+}
+
+.nav-item {
+    height: 55px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3px;
+}
+
+/* Skills bar */
+#skills {
+    width: 550px;
+    margin: 50px auto 0;
+    padding: 0 20px 20px 20px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    box-shadow: 1px 1px 19px 7px rgba(0, 0, 0, 0.22);
+}
+
+#exp li {
+    position: relative;
+    list-style: none;
+    margin: 50px 0;
+    font-weight: 550;
+    cursor: default;
+}
+
+#exp li::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: var(--primary-color);
+    border-radius: 100px;
+}
+
+#exp li::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 0;
+    height: 15px;
+    background-color: var(--main-green);
+    border-radius: 100px;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#exp li.java::after {
+    animation-name: java;
+}
+
+@keyframes java {
+    to {
+        width: 69%;
+    }
+
+}
+
+#exp li.c::after {
+    animation-name: c;
+}
+
+@keyframes c {
+    to {
+        width: 55%;
+    }
+
+}
+
+#exp li.python::after {
+    animation-name: python;
+}
+
+@keyframes python {
+    to {
+        width: 45%;
+    }
+
+}
+
+#exp li.mysql::after {
+    animation-name: mysql;
+}
+
+@keyframes mysql {
+    to {
+        width: 60%;
+    }
+
+}
+
+/* End of skills bar*/
+
+a:hover {
+    color: darkgreen !important;
+}
+
+
+.nav-link,
+.nav-link:visited {
+    position: relative;
+    color: var(--main-green);
+}
+
+/* Animating link borders */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    background: var(--main-green);
+    transform: scale(0, 1);
+    transition: transform 0.28s ease;
+}
+
+.nav-link:hover::after {
+    transform: scale(1, 1);
+}
+
+/* End of link borders*/
+
+#home p {
+    position: relative;
+    max-width: 500px;
+    cursor: default;
+}
+
+#langs p {
+    position: relative;
+    top: 60px;
+    text-align: center;
+    cursor: default;
+}
+
+#intro {
+    margin-left: 17%;
+    margin-right: 20.5%;
+    margin-top: 90px
+}
+
+#intro-two {
+    margin-left: 50%;
+    margin-right: 15%;
+    top: 120px;
+}
+
+#navbar {
+    top: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.text-first::first-letter {
+    font-size: 2.3rem;
+    color: var(--main-green);
+}
+
+#icons {
+    margin: 8% 20%;
+}
+
+#icons div.col-md-auto {
+    margin: 5% 8%;
+    width: 150px;
+}
+
+#social .fa-brands:hover {
+    cursor: pointer;
+}
+
+.fa-facebook-square {
+    color: #395693;
+}
+
+.fa-instagram {
+    color: #a02c95;
+}
+
+.fa-pinterest {
+    color: #f50a26;
+}
+
+.fa-github {
+    color: #6e5494;
+}
+
+.fa-whatsapp {
+    color: #25d366;
+}
+
+.fa-at {
+    color: #0052a3;
+}
+
+.fa-google {
+    color: #4285f4;
+}
+
+#contact .icon {
+    margin-left: 36.5%;
+}
+
+#contact .col-md-auto {
+    margin-top: 35px;
+}
+
+#contact {
+    margin-top: 7%;
+    cursor: default;
+}
+
+#contact p {
+    font-size: 1.9rem;
+    padding-top: 12px;
+    left: 3px;
+}
+
+#icon-toggle {
+    position: relative;
+    width: 46px;
+    height: 35px;
+    margin-top: 10px;
+    left: 20px;
+    cursor: pointer;
+    color: var(--fa-color);
+}
